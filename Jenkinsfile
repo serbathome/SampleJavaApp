@@ -16,9 +16,6 @@ pipeline {
                 // build docker container
                 sh "docker build -t myapp.v1 ."
 
-                docker.withRegistry('https://index.docker.io/v1/', 'dockerhub') {
-                    sh "docker push serbathome/myapp.v1"
-                }
             }
         }
         stage('Test') {
