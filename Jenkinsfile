@@ -14,12 +14,12 @@ pipeline {
                 // bat "mvn -Dmaven.test.failure.ignore=true clean package"
 
                 // build docker container
-                sh "docker build -t myapp:${BUILDS_ALL_TIME} ."
+                sh "docker build -t myapp:${currentBuild.number} ."
 
                 // push docker container to docker hub
                 // sh "docker login -u serbathome -p $DOCKER_PASSWORD"
-                sh "docker tag myapp:v1 serbathome/samplejavaapp:${BUILDS_ALL_TIME}"
-                sh "docker push serbathome/samplejavaapp:${BUILDS_ALL_TIME}"
+                sh "docker tag myapp:v1 serbathome/samplejavaapp:${currentBuild.number}"
+                sh "docker push serbathome/samplejavaapp:${currentBuild.number}"
 
             }
         }
