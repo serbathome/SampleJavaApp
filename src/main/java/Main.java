@@ -3,7 +3,6 @@ public class Main {
         System.out.println("Hello World!");
         while(true) {
             System.out.print('.');
-            // make thread sleep for 1 second
             Thread.sleep(1000);
         }
     }
