@@ -17,7 +17,7 @@ pipeline {
                 sh "docker build -t myapp:v1 ."
 
                 // push docker container to docker hub
-                sh "docker login -u serbathome -p $DOCKER_PASSWORD"
+                // sh "docker login -u serbathome -p $DOCKER_PASSWORD"
                 sh "docker tag myapp.:v1 serbathome/samplejavaapp:v1"
                 sh "docker push serbathome/samplejavaapp:v1"
 
