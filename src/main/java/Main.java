@@ -1,6 +1,10 @@
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         System.out.println("Hello World!");
-        System.out.println("Hello again!");
+        while(true) {
+            System.out.print('.');
+            // make thread sleep for 1 second
+            Thread.sleep(1000);
+        }
     }
 }
